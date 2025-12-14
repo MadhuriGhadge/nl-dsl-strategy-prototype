@@ -19,7 +19,7 @@ EXIT:
 - `ENTRY` defines when to open a position
 - `EXIT` defines when to close a position
 
-## Grammar (Simplified)
+## Grammar
 
 strategy := ENTRY expression EXIT expression
 
@@ -84,7 +84,7 @@ close > sma(close,20) AND volume > 1000000
 EXIT:
 rsi(close,14) < 30
 
-## AST Representation (Example)
+## AST Representation
 
 {
   "type": "binary_op",
