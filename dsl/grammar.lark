@@ -1,0 +1,25 @@
+?start: strategy
+
+strategy: "ENTRY:" expr "EXIT:" expr
+
+?expr: expr "AND" term   -> and_expr
+     | expr "OR" term    -> or_expr
+     | term
+
+?term: comparison
+     | "(" expr ")"
+
+comparison: value OP value
+
+value: METRIC
+     | INDICATOR
+     | NUMBER
+
+METRIC: "open" | "high" | "low" | "close" | "volume"
+INDICATOR: /(SMA|RSI)\([a-z]+,\d+\)/
+
+OP: ">" | "<" | ">=" | "<=" | "=="
+
+%import common.NUMBER
+%import common.WS
+%ignore WS
