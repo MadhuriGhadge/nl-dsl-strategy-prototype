@@ -109,12 +109,18 @@ rsi(close,14) < 30
 
 #### Validation Rules
 Only supported metrics and indicators are allowed
+
 Entry and Exit blocks are required
+
 Invalid syntax raises a parsing error
+
 Indicators must use valid parameters
 
 #### Assumptions & Limitations
 Single asset strategy
+
 One position at a time (no pyramiding)
+
 No transaction costs or slippage
+
 Indicators implemented using pandas
